@@ -37,6 +37,7 @@ function draw(){
     let minuteAngle = map(minute(), 0, 60, 0, 360);
     let hoursAngle = map(hour(), 0, 12, 0, 360);
 
+  //  console.log(secondAngle, minuteAngle, hoursAngle);
 
     //line
     stroke(0);
@@ -70,12 +71,15 @@ function draw(){
     }
     pop();
 
+    //cutomising with numbers
     push();
     for(let i=1; i<=12; i++){
-        text(`${i}`, 0, -secondRadius - 5);
-        rotate(30);
+        textAlign(LEFT, CENTER);
+        text(`${i}`, 60, -secondRadius - 5);
+        rotate(hoursAngle);
     }
     pop();
+  
 }
 
 
