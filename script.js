@@ -10,16 +10,23 @@ function setup() {
     angleMode(DEGREES);
 
     let radius = min(width, height) / 2;
-    console.log(radius);
+   // console.log(radius);
     secondRadius = radius * 0.71;
     minuteRadius = radius * 0.6;
     hoursRadius = radius * 0.5;
     clockRadius = radius * 1.7;
-    console.log(clockRadius);
+   // console.log(clockRadius);
 }
 
 function draw() {
-    background(233);
+    background(0);
+
+    for(let i=0; i<500; i++){
+        frameRate(1);
+        fill(random(255), random(255), random(255));
+        noStroke();
+        circle(random(width), random(height), random(5, 10));
+    }
 
     translate(width / 2, height / 2);
     
@@ -61,11 +68,13 @@ function draw() {
     line(0, 0, 0, -hoursRadius);
     pop();
 
+    //center point
     push()
     fill(0);
     noStroke();
     circle(0, 0, 5);
     pop();
+
     //tick
 
     push();
